@@ -1,18 +1,25 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import ReactNativeBleAdvertiser from '@teamdotworld/rn-ble-advertiser';
+import ReactNativeBleAdvertiser from 'tp-rn-ble-advertiser';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = React.useState<string>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     ReactNativeBleAdvertiser.initializeBle();
-    ReactNativeBleAdvertiser.setData('testing data from ble app');
+    ReactNativeBleAdvertiser.setData('Hellooo!!! Hear Meeeee !!!!');
+
     setTimeout(() => {
       ReactNativeBleAdvertiser.startBroadcast();
-    }, 4000);
-    setResult(1);
+      setResult('Broadcast started');
+    }, 500);
+
+    // setTimeout(() => {
+    //   ReactNativeBleAdvertiser.stopBroadcast();
+    //   setResult('Broadcast stopped');
+    // }, 15000);
+    setResult('Initialized');
   }, []);
 
   return (

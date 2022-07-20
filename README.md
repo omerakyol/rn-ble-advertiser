@@ -1,6 +1,6 @@
-# @teamdotworld/rn-ble-advertiser
+# tp-rn-ble-advertiser
 
-[![Build Status](https://github.com/TeamDotworld/rn-ble-advertiser/actions/workflows/publish-package.yml/badge.svg)](https://github.com/TeamDotworld/rn-ble-advertiser/actions/workflows/publish-package.yml)
+[![Build Status](https://github.com/omerakyol/rn-ble-advertiser/actions/workflows/publish-package.yml/badge.svg)](https://github.com/omerakyol/rn-ble-advertiser/actions/workflows/publish-package.yml)
 
 Advertise given message using BLE
 
@@ -8,22 +8,8 @@ Advertise given message using BLE
 
 ## Installation
 
-For installing this package from GitHub Package registry read the steps [here](https://docs.github.com/en/enterprise-server@2.22/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package)
-
-Authenticate to GitHub package registry using below command. Use Token
-
 ```sh
-$ npm login --scope=@teamdotworld --registry=https://npm.pkg.github.com
-
-> Username: USERNAME
-> Password: TOKEN
-> Email: PUBLIC-EMAIL-ADDRESS
-```
-
-Now install the package. See the releases and use latest version
-
-```sh
-npm install @teamdotworld/rn-ble-advertiser@3.0.5
+npm install tp-rn-ble-advertiser
 ```
 
 ---
@@ -82,11 +68,11 @@ Add this to Info.plist file for permission
 
 ```js
 import { Platform } from 'react-native';
-import ReactNativeBleAdvertiser from '@teamdotworld/rn-ble-advertiser';
+import ReactNativeBleAdvertiser from 'tp-rn-ble-advertiser';
 
 // Use a switch to turn it on or off
 ReactNativeBleAdvertiser.initializeBle(); // Initalize the service
-ReactNativeBleAdvertiser.setData('1234'); // set the data
+ReactNativeBleAdvertiser.setData('My Data'); // set the data
 setTimeout(() => {
   // start the service after setting data. Restart if the data is changed after starting
   ReactNativeBleAdvertiser.startBroadcast();

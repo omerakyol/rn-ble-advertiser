@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@teamdotworld/rn-ble-advertiser": ["./src/index"]
+      "tp-rn-ble-advertiser": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

@@ -1,5 +1,5 @@
 {
-  "name": "@teamdotworld/rn-ble-advertiser",
+  "name": "tp-rn-ble-advertiser",
   "version": "3.0.5",
   "description": "A React native BLE Advertiser",
   "main": "lib/commonjs/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "teamdotworld-rn-ble-advertiser.podspec",
+    "tp-rn-ble-advertiser.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -37,17 +37,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/TeamDotworld/rn-ble-advertiser.git",
-  "author": "Naveen Sakthivel <naveenrobotics@live.in> (https://github.com/naveenrobo)",
+  "repository": "https://github.com/omerakyol/rn-ble-advertiser.git",
+  "author": "Ömer Akyol",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TeamDotworld/rn-ble-advertiser.git/issues"
+    "url": "https://github.com/omerakyol/rn-ble-advertiser.git/issues"
   },
-  "homepage": "https://github.com/TeamDotworld/rn-ble-advertiser.git#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
-  },
+  "homepage": "https://github.com/omerakyol/rn-ble-advertiser.git#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
     "@react-native-community/eslint-config": "^2.0.0",
