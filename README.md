@@ -1,6 +1,5 @@
 # tp-rn-ble-advertiser
 
-[![Build Status](https://github.com/omerakyol/rn-ble-advertiser/actions/workflows/publish-package.yml/badge.svg)](https://github.com/omerakyol/rn-ble-advertiser/actions/workflows/publish-package.yml)
 
 Advertise given message using BLE
 
