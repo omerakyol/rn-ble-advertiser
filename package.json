@@ -1,6 +1,6 @@
 {
   "name": "tp-rn-ble-advertiser",
-  "version": "4.0.0",
+  "version": "5.1.0",
   "description": "A React native BLE Advertiser",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

@@ -1,11 +1,9 @@
-package dev.dotworld.ble.receivers
+package com.tulparyazilim.ble
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.util.Log
-import dev.dotworld.ble.Utils
-import io.sentry.Sentry
+import android.util.Log 
 
 class RestartReceiver : BroadcastReceiver() {
 
@@ -19,8 +17,7 @@ class RestartReceiver : BroadcastReceiver() {
 				Log.d(TAG, "onReceive: Starting BLE monitoring service")
 				Utils.startBluetoothMonitoringService(context)
 			}
-		} catch (e: Exception) {
-			Sentry.captureException(e)
+		} catch (e: Exception) { 
 			e.printStackTrace()
 		}
 	}

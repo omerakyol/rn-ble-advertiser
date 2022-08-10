@@ -1,4 +1,4 @@
-package dev.dotworld.ble.sample;
+package com.tulparyazilim.ble.sample;
 
 import com.facebook.react.ReactActivity;
 

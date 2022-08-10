@@ -17,19 +17,17 @@ RCT_EXPORT_MODULE(ReactNativeBleAdvertiser)
   return @[@"level"];
 }
 
-RCT_EXPORT_METHOD(initializeBle){
+RCT_EXPORT_METHOD(startBroadcast: (nonnull NSString *)data) {
+
    RCTLogInfo(@"initializeBle function called");
    peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil options:nil];
-}
 
-RCT_EXPORT_METHOD(setData: (nonnull NSString *)data){
-    RCTLogInfo(@"setData function called %@", data);
-    dataToSend = data;
-}
+   RCTLogInfo(@"data is set to %@", data);
+   dataToSend = data;
 
-RCT_EXPORT_METHOD(startBroadcast) {
-    NSLog(@"startAdvertising");
-    [peripheralManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]] }];
+   NSLog(@"startAdvertising");
+   [peripheralManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]] }];
+
 }
 
 RCT_EXPORT_METHOD(stopBroadcast) {

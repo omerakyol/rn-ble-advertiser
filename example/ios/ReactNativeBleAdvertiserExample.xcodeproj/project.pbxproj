@@ -363,7 +363,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dotworld.ble.sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tulparyazilim.ble.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactNativeBleAdvertiserExample.app/ReactNativeBleAdvertiserExample";
 			};
@@ -382,7 +382,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dotworld.ble.sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tulparyazilim.ble.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactNativeBleAdvertiserExample.app/ReactNativeBleAdvertiserExample";
 			};
@@ -405,7 +405,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dotworld.ble.sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tulparyazilim.ble.sample;
 				PRODUCT_NAME = ReactNativeBleAdvertiserExample;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -429,7 +429,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.dotworld.ble.sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tulparyazilim.ble.sample;
 				PRODUCT_NAME = ReactNativeBleAdvertiserExample;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

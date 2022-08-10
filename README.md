@@ -1,5 +1,6 @@
 # tp-rn-ble-advertiser
 
+[![Build Status](https://github.com/omerakyol/rn-ble-advertiser/actions/workflows/publish-package.yml/badge.svg)](https://github.com/omerakyol/rn-ble-advertiser/actions/workflows/publish-package.yml)
 
 Advertise given message using BLE
 
@@ -26,10 +27,9 @@ Add this to your AndroidManifest.xml inside application tag
 	  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application ...>
         ...
-    	<service android:name="dev.dotworld.ble.bluetooth.gatt.GattBackgroundService" />
 
 		<receiver
-			android:name="dev.dotworld.ble.receivers.RestartReceiver"
+			android:name="com.tulparyazilim.ble.RestartReceiver"
 			android:enabled="true"
 			android:exported="true"
 			android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
@@ -69,12 +69,9 @@ Add this to Info.plist file for permission
 import { Platform } from 'react-native';
 import ReactNativeBleAdvertiser from 'tp-rn-ble-advertiser';
 
-// Use a switch to turn it on or off
-ReactNativeBleAdvertiser.initializeBle(); // Initalize the service
-ReactNativeBleAdvertiser.setData('My Data'); // set the data
 setTimeout(() => {
   // start the service after setting data. Restart if the data is changed after starting
-  ReactNativeBleAdvertiser.startBroadcast();
+  ReactNativeBleAdvertiser.startBroadcast('My Data');
 
   setTimeout(() => {
     // start the service after setting data. Restart if the data is changed after starting

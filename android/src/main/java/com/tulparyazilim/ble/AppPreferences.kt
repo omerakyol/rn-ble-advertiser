@@ -1,4 +1,4 @@
-package dev.dotworld.ble
+package com.tulparyazilim.ble
 
 import android.content.Context
 import android.content.SharedPreferences

@@ -7,19 +7,13 @@ export default function App() {
   const [result, setResult] = React.useState<string>();
 
   useEffect(() => {
-    ReactNativeBleAdvertiser.initializeBle();
-    ReactNativeBleAdvertiser.setData('Hellooo!!! Hear Meeeee !!!!');
+    ReactNativeBleAdvertiser.startBroadcast('Hellooo!!! Hear Meeeee !!!!');
+    setResult('Broadcast started');
 
     setTimeout(() => {
-      ReactNativeBleAdvertiser.startBroadcast();
-      setResult('Broadcast started');
-    }, 500);
-
-    // setTimeout(() => {
-    //   ReactNativeBleAdvertiser.stopBroadcast();
-    //   setResult('Broadcast stopped');
-    // }, 15000);
-    setResult('Initialized');
+      ReactNativeBleAdvertiser.stopBroadcast();
+      setResult('Broadcast stopped');
+    }, 10000);
   }, []);
 
   return (

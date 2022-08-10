@@ -1,4 +1,4 @@
-package dev.dotworld.ble
+package com.tulparyazilim.ble
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule

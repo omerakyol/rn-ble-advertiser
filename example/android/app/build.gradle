@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "dev.dotworld.ble.sample"
+        applicationId "com.tulparyazilim.ble.sample"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
