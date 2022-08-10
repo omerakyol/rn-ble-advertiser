@@ -19,15 +19,17 @@ RCT_EXPORT_MODULE(ReactNativeBleAdvertiser)
 
 RCT_EXPORT_METHOD(startBroadcast: (nonnull NSString *)data) {
 
-   RCTLogInfo(@"initializeBle function called");
-   peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil options:nil];
-
    RCTLogInfo(@"data is set to %@", data);
    dataToSend = data;
 
-   NSLog(@"startAdvertising");
-   [peripheralManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]] }];
-
+   RCTLogInfo(@"initializeBle function called");
+   peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil options:nil];
+ 
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+      NSLog(@"startAdvertising");
+      [peripheralManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]] }];
+   });
+   
 }
 
 RCT_EXPORT_METHOD(stopBroadcast) {
@@ -51,6 +53,8 @@ RCT_EXPORT_METHOD(stopBroadcast) {
     // ... so build our service.
     NSData* data = [self->dataToSend dataUsingEncoding:NSUTF8StringEncoding];
     
+    RCTLogInfo(@"data is %@", data);
+
     // Start with the CBMutableCharacteristic
     self->transferCharacteristics  = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]
                                                                       properties:CBCharacteristicPropertyRead
@@ -77,6 +81,8 @@ RCT_EXPORT_METHOD(stopBroadcast) {
             didAddService:(CBService *)service
                     error:(NSError *)error {
  
+    RCTLogInfo(@"didAddService function called");
+
     if (error) {
         NSLog(@"Error publishing service: %@", [error localizedDescription]);
     }else {
@@ -87,6 +93,8 @@ RCT_EXPORT_METHOD(stopBroadcast) {
 - (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral
                                        error:(NSError *)error {
  
+    RCTLogInfo(@"peripheralManagerDidStartAdvertising function called, peripheral is %@", peripheral);
+
     if (error) {
         NSLog(@"Error advertising: %@", [error localizedDescription]);
     }else{
